@@ -1,6 +1,6 @@
 
-const email = 'Enter you emailId';
-const password='Enter your password';
+const email = 'Nishanthreddy4566@gmail.com';
+const password='9491700844@Mn';
 
 
 document.getElementById('auto-fill-btn').addEventListener('click', function() {
