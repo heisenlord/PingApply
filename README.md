@@ -80,7 +80,7 @@ Please ensure your code adheres to the existing style and includes appropriate t
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the  file for details.
 
 ## Disclaimer
 
@@ -88,6 +88,6 @@ This extension is for educational purposes only. Be aware of the terms of servic
 
 ## Contact
 
-If you have any questions, feel free to reach out to [your-email@example.com](mailto:your-email@example.com) or open an issue in the GitHub repository.
+If you have any questions, feel free to reach out to [Nishanth.vercel.app](https://nishanthreddy.vercel.app/) or open an issue in the GitHub repository.
 
 Happy autofilling!
