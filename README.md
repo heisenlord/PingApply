@@ -9,7 +9,7 @@
    ```bash
    git clone https://github.com/heisenlord/PingApply.git
    ```
-
+1.2-open vscode and open the pingApply folder make sure you add your mail id and password in popup.js file
 2. Open Google Chrome and navigate to `chrome://extensions/`
 3. Enable "Developer mode" in the top right corner
 4. Click "Load unpacked" and select the cloned folder
