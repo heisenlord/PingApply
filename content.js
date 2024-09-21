@@ -1,7 +1,7 @@
-// Define the password
+
 let password = '';
 
-// Sleep function to delay execution
+// Sleep
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -18,14 +18,14 @@ async function autofillAndSubmit(email) {
         const loginButton = await waitForElementContainingText('Login');
         await clickButton(loginButton);
         console.log('All steps completed successfully!');
-        await sleep(2000);
+        // await sleep(2000);
         await executeTasks();
     } catch (error) {
         console.error('An error occurred:', error);
     }
 }
 
-// Autofill email input field
+// Autofill email input 
 async function autofillEmail(email) {
     const emailInput = document.getElementById('email');
     if (emailInput) {
@@ -49,7 +49,7 @@ async function clickNextButton() {
     }
 }
 
-// Autofill password input field
+// Autofill password input 
 async function autofillPassword(passwordInput) {
     if (passwordInput) {
         passwordInput.value = password;
@@ -61,7 +61,7 @@ async function autofillPassword(passwordInput) {
     }
 }
 
-// Click specified button
+// Click  button
 async function clickButton(button) {
     if (button) {
         button.closest('button').click();
@@ -71,7 +71,7 @@ async function clickButton(button) {
     }
 }
 
-// Wait for an element to appear
+// Wait for element to appear
 async function waitForElement(selector) {
     return new Promise((resolve) => {
         const intervalId = setInterval(() => {
@@ -84,7 +84,7 @@ async function waitForElement(selector) {
     });
 }
 
-// Wait for an element containing specific text to appear
+// Wait for element contain's span
 async function waitForElementContainingText(text) {
     return new Promise((resolve) => {
         const intervalId = setInterval(() => {
@@ -188,8 +188,8 @@ async function findAndClickElementsWithCheck(elementId, divText) {
                 continue;
             }
 
-            await sleep(5000);
-            console.log('Sleep 5s - iteration', idx + 1);
+            // await sleep(5000);
+            // console.log('Sleep 5s - iteration', idx + 1);
 
             try {
                 console.log(`Attempting to click on element ${idx + 1} with innerText:`, element.innerText);
@@ -201,8 +201,8 @@ async function findAndClickElementsWithCheck(elementId, divText) {
 
             await checkButton();
             await checkAndClickItems();
-            await sleep(5000);
-            console.log('Slept 5s after checking - iteration', idx + 1);
+            // await sleep(5000);
+            // console.log('Slept 5s after checking - iteration', idx + 1);
 
             elementsWithID = document.querySelectorAll(`#${elementId}`);
             elementsArray = Array.from(elementsWithID);
@@ -273,8 +273,8 @@ async function checkButton() {
 }
 
 async function executeTasks() {
-    await sleep(7000); 
-    console.log('Slept for 7 second e-1');
+    // await sleep(7000); 
+    // console.log('Slept for 7 second e-1');
 
     await checkAndClickItems();
     let divText = await getPreviousDivText('desBadgeIconID');
