@@ -1,5 +1,5 @@
 # PINGAPPLY Chrome Extension
-##one click apply all
+## One Click Apply All Jobs
 
 
 
