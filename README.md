@@ -1,17 +1,7 @@
-# Auto-Fill Chrome Extension
+# PINGAPPLY Chrome Extension
+##one click apply all
 
-This Chrome extension automates filling out and submitting login forms by autofilling email and password fields and clicking buttons like "Next" and "Login."
 
-## Features
-
-- Autofills email and password fields
-- Clicks "Next" and "Login" buttons automatically
-- Manages delays to ensure elements are ready
-
-## Prerequisites
-
-- Google Chrome browser
-- Basic knowledge of Chrome extensions
 
 ## Installation
 
