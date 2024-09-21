@@ -18,6 +18,7 @@
 5. Enable "Developer mode" in the top right corner.
 
 6. Click "Load unpacked" and select the cloned PingApply folder.
+7. You are now happy to use on cdc portal.
 
 ### Usage
 
