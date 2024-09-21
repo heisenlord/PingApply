@@ -17,9 +17,18 @@
 ## Usage
 
 1. Click the extension icon in the Chrome toolbar
-2. Enter your email and password in the popup
-3. Navigate to the login page you want to autofill
-4. The extension will automatically fill in the form and attempt to submit it
+2. Enter your email and password in the popup.js file
+3. Now open cdc.vit.ac.in and open extension on right click make sure it pinned and apply over simple.
+4. The extension will automatically Apply all jobs that haven't been applied in the portal
+
+   
+## Privacy and Security
+
+Your privacy and security are our top priorities. Here's how we protect your information:
+
+- **Local Storage Only**: Your email and password are stored locally on your machine. They are never sent to any external servers.
+- **No Remote Access**: Since the extension runs entirely on your local machine, no one else can access your stored credentials.
+- **Popup.js Implementation**: The `popup.js` file handles the storage and retrieval of your credentials. Here's a simplified example of how it works:
 
 ## How It Works
 
