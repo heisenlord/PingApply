@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Set your desired background color */
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    border: 7px solid   rgb(255, 0, 0);
+    margin: 10px;
+    border-radius: 40px;
+    box-shadow: 8px -8px  rgb(255, 0, 0);
+    font-family: system-ui, sans-serif;
+    
+
+
+}
+.textdiv{
+   
+    align-items: center;display: flex;
+    flex-direction: column;
+}
+#img{
+    position: relative;
+    top: 4px;
+    width: 20px;
+    color: blanchedalmond;
+}
+
+.popup-container {
+    justify-content: center;
+    align-items: center;display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 15px;
+    
+   
+}
+.h1ping{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+#h11{
+  
+  
+   animation: spidAnimate;
+   animation-duration: 1.3s;
+   animation-timing-function: ease-in-out;
+
+
+}
+.h{
+    font-size: 40px;
+    font-weight: 900;
+   color: rgb(254, 98, 8);
+}
+#h13,#h12{
+    animation: spidAnimate;
+    animation-duration: 1.3s;
+    animation-timing-function: ease-in-out;
+}
+#h14{
+  
+    animation: spidAnimate;
+    animation-duration: 1.3s;
+    animation-timing-function: ease-in-out;
+}
+
+.btn{
+    padding: 5px 10px;
+    margin-top: -10px;
+    border: 2px solid rgb(0, 0, 0);
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    transition: 0.5s;
+    color: white;
+    background-color: rgb(80, 4, 4);
+    font-size: medium;
+    font-weight: 900;
+    box-shadow: 2px 2px 2px rgb(54, 9, 65);
+    
+}
+
+.btn:hover{
+    width: 130px;
+    height: 70px;
+    font-size: 23px;
+}
+.btn:active{
+    width: 90px;
+    height: 70px;
+    font-size: 23px;
+    color: rgb(65, 21, 75);
+    background-color: white;
+  
+}
+
+a{
+    margin-top: -5px;
+    list-style: none;
+    text-decoration: none;
+    color: rgb(230, 72, 14);
+}
+.ok{
+    color: rgb(93, 83, 103);
+ 
+}
+@keyframes spidAnimate {
+    from{
+        transform: translateY(-100px);
+        color: rgb(255, 255, 255);
+    }
+    to{
+        transform: translateY(0px);
+        color: rgb(233, 93, 29);
+    }
+    
+}
+.imgspd{
+    width: 70px;
+    position: absolute;
+    top: 17px;
+    z-index: -1;
+    animation: spidAnimate;
+    animation-duration: 1.3s;
+    animation-timing-function: ease-in-out;
+   
+
+}
+/* .textdiv{
+    animation: spidAnimate;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+} */
+
+
+/* svg */
+svg {
+    width: 100px;
+    height: 125px;
+    position: absolute;
+    top: 30px;
+    animation: spidAnimate;
+    animation-duration: 1.3s;
+    animation-timing-function: ease-in-out;
+  }
+  @keyframes bendWire {
+    0% {
+      d: path("M50,0 Q50,100 50,200 T50,400"); /* Initial straight shape */
+    }
+    25% {
+      d: path("M50,0 Q100,200 30,300 T50,400"); /* Strong rightward curve */
+    }
+    50% {
+      d: path("M50,0 Q30,150 70,300 T20,400"); /* Bend left more strongly */
+    }
+    75% {
+      d: path("M50,0 Q80,180 40,300 T60,400"); /* Rightward curve again */
+    }
+    100% {
+      d: path("M50,0 Q50,100 50,200 T50,400"); /* Return to the initial position */
+    }
+  }
+
+  /* Wire styling */
+  .wire {
+    fill: none;
+    stroke: #f8f8f8;
+    stroke-width: 5;
+    stroke-linecap: round;
+    animation: bendWire 3s ease-in-out infinite;
+  }
