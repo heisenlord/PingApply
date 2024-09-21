@@ -1,5 +1,5 @@
 # PINGAPPLY Chrome Extension
-## One Click Apply All Jobs
+## One Click Apply All Jobs ON CDC PORTAL VIT
 
 
 
