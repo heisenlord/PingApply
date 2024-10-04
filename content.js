@@ -234,7 +234,7 @@ async function enterTextAndConfirm() {
                     console.log('Removed disabled attribute from Confirm button.');
                     confirmButton.click();
                     console.log('Clicked the Confirm button!');
-                    clearInterval(intervalId);
+                    clearInterval(intervalId);  // This will stop the interval
                     resolve(true);
                 } else {
                     console.log('Confirm button not found, still checking...');
@@ -245,6 +245,7 @@ async function enterTextAndConfirm() {
         }, 2000);
     });
 }
+
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -282,7 +283,7 @@ async function executeTasks() {
     console.log('Item check complete. total process is finish');
 }
 
-executeTasks();
+// executeTasks();
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.action === 'autofill') {
