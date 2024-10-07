@@ -226,25 +226,33 @@ async function enterTextAndConfirm() {
                 inputElement.dispatchEvent(inputEvent);
                 console.log('Entered "Apply" into the input field!');
 
-                await new Promise(resolve => setTimeout(resolve, 1000));
+                // Await before clicking confirm
+                //await new Promise(resolve => setTimeout(resolve, 1000));
 
                 const confirmButton = document.getElementById('ffConfirm');
                 if (confirmButton) {
                     confirmButton.removeAttribute('disabled');
                     console.log('Removed disabled attribute from Confirm button.');
+                    
+                    // Stop the interval before clicking confirm
+                    clearInterval(intervalId);
+                    console.log('Stopped the interval.');
+
                     confirmButton.click();
                     console.log('Clicked the Confirm button!');
-                    clearInterval(intervalId);  // This will stop the interval
-                    resolve(true);
+                    resolve(true);  // Resolve the promise once confirm is clicked
                 } else {
                     console.log('Confirm button not found, still checking...');
+                    
                 }
             } else {
                 console.log('Input element not found, still checking...');
+                resolve(true);
             }
         }, 2000);
     });
 }
+
 
 
 
@@ -284,7 +292,7 @@ async function executeTasks() {
     console.log('Item check complete. total process is finish');
 }
 
-// executeTasks();
+executeTasks();
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.action === 'autofill') {
