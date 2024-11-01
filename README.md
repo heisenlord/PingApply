@@ -1,6 +1,7 @@
 # PINGAPPLY Chrome Extension
 
-## One-Click Apply for All Jobs on VIT CDC Portal
+## One-Click Apply for All Jobs on VIT CDC Portal (sorry for late response solved most of the bugs and solving the remaing bug by NOV3 will report everything clean)
+## By the way I was thinking of making group PingApply suggest me some things to do it
 
 ### Installation
 
