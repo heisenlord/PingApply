@@ -104,6 +104,7 @@ async function checkAndClickItems() {
             const listItems = document.querySelectorAll('.ng-star-inserted li');
             if (listItems.length > 0) {
                 let foundMatch = false;
+                
                 listItems.forEach(li => {
                     if (li.innerText.trim().toLowerCase() === 'jobs') {
                         li.click();
@@ -180,7 +181,7 @@ async function findAndClickElementsWithCheck(elementId, divText) {
         let slicedElements = elementsArray.slice(0, matchingIndex).reverse();
         console.log('Sliced elements:', slicedElements);
 
-        for (let idx = 0; idx < slicedElements.length; idx++) {
+        for (let idx = 0; idx <= slicedElements.length; idx++) {
             let element = slicedElements[idx];
 
             if (!element || typeof element.click !== 'function') {
@@ -192,6 +193,10 @@ async function findAndClickElementsWithCheck(elementId, divText) {
             // console.log('Sleep 5s - iteration', idx + 1);
 
             try {
+                elementsWithID = document.querySelectorAll(`#${elementId}`);
+                elementsArray = Array.from(elementsWithID);
+                slicedElements = elementsArray.slice(0, matchingIndex).reverse();
+                element = slicedElements[idx];
                 console.log(`Attempting to click on element ${idx + 1} with innerText:`, element.innerText);
                 await element.click();
             } catch (error) {
@@ -201,12 +206,11 @@ async function findAndClickElementsWithCheck(elementId, divText) {
 
             await checkButton();
             await checkAndClickItems();
-            // await sleep(5000);
+            await sleep(5000);
             // console.log('Slept 5s after checking - iteration', idx + 1);
+console.log('c0'+idx+' length '+slicedElements.length);
+           
 
-            elementsWithID = document.querySelectorAll(`#${elementId}`);
-            elementsArray = Array.from(elementsWithID);
-            slicedElements = elementsArray.slice(0, matchingIndex).reverse();
         }
 
         return true;
@@ -247,6 +251,7 @@ async function enterTextAndConfirm() {
                 }
             } else {
                 console.log('Input element not found, still checking...');
+                clearInterval(intervalId);
                 resolve(true);
             }
         }, 2000);
@@ -287,12 +292,13 @@ async function executeTasks() {
     // console.log('Slept for 7 second e-1');
 
     await checkAndClickItems();
-    let divText = await getPreviousDivText('desBadgeIconID');
+    //let divText = await getPreviousDivText('desBadgeIconID');
+    let divText="NVIDIA";
     await findAndClickElementsWithCheck('driveNameID', divText);
     console.log('Item check complete. total process is finish');
 }
 
-executeTasks();
+//executeTasks();
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.action === 'autofill') {
