@@ -33,6 +33,7 @@ async function autofillEmail(email) {
         const emailInputEvent = new Event('input', { bubbles: true });
         emailInput.dispatchEvent(emailInputEvent);
         console.log('Email field autofilled!');
+// document.getElementById('status').innerHTML = 'Email field autofilled!';
     } else {
         throw new Error('Email input field not found.');
     }
@@ -292,8 +293,8 @@ async function executeTasks() {
     // console.log('Slept for 7 second e-1');
 
     await checkAndClickItems();
-    //let divText = await getPreviousDivText('desBadgeIconID');
-    let divText="NVIDIA";
+    let divText = await getPreviousDivText('desBadgeIconID');
+    // let divText="NVIDIA";
     await findAndClickElementsWithCheck('driveNameID', divText);
     console.log('Item check complete. total process is finish');
 }
@@ -302,7 +303,14 @@ async function executeTasks() {
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.action === 'autofill') {
+        let divSearch=document.getElementById('mycsearch');
+        if(divSearch)
+        {
+            executeTasks();
+        }
+        else{
         password = request.password;
         autofillAndSubmit(request.email);
+        }
     }
 });

@@ -17,6 +17,15 @@ body {
 
 
 }
+#stat{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#status{
+    color: rgb(254, 98, 8);
+}
 .textdiv{
    
     align-items: center;display: flex;
