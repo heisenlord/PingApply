@@ -33,7 +33,6 @@ async function autofillEmail(email) {
         const emailInputEvent = new Event('input', { bubbles: true });
         emailInput.dispatchEvent(emailInputEvent);
         console.log('Email field autofilled!');
-// document.getElementById('status').innerHTML = 'Email field autofilled!';
     } else {
         throw new Error('Email input field not found.');
     }
@@ -127,23 +126,27 @@ async function checkAndClickItems() {
 async function getPreviousDivText(elementId) {
     return new Promise((resolve, reject) => {
         const interval = setInterval(() => {
-            const targetElement = document.getElementById(elementId);
-            const previousDivElement = targetElement?.previousElementSibling;
+            // const targetElement = document.getElementById(elementId);
+            // const previousDivElement = targetElement?.previousElementSibling;
+            // console.log(previousDivElement);
+            const targetDiv = document.querySelector(
+                "div.t-font-bold.t-text-default.t-text-black.t-mb-10.t-overflow-hidden.t-text-ellipsis.t-whitespace-nowrap.t-max-w-\\[10rem\\]"
+            );
+            if (targetDiv) {
+                const divText = targetDiv.innerText.trim();
 
-            if (previousDivElement && previousDivElement.tagName.toLowerCase() === 'div') {
-                const divText = previousDivElement.innerText.trim();
-
-                if (divText) {
+               
                     console.log('Found div text:', divText);
                     clearInterval(interval);
                     resolve(divText);
-                }
+                
             } else {
                 console.log('No valid div found or no text yet, checking again in 2 seconds...');
             }
         }, 2000);
     });
 }
+
 
 async function waitForElementsById(elementId) {
     return new Promise((resolve) => {
@@ -293,6 +296,9 @@ async function executeTasks() {
     // console.log('Slept for 7 second e-1');
 
     await checkAndClickItems();
+    // console.log('sleeping 2sec');
+    // await sleep(2000);
+    
     let divText = await getPreviousDivText('desBadgeIconID');
     // let divText="NVIDIA";
     await findAndClickElementsWithCheck('driveNameID', divText);
@@ -302,7 +308,7 @@ async function executeTasks() {
 //executeTasks();
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    if (request.action === 'autofill') {
+   if (request.action === 'autofill') {
         let divSearch=document.getElementById('mycsearch');
         if(divSearch)
         {
